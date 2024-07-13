@@ -4,7 +4,7 @@ import { useState } from "react";
 // import "./App.css";
 
 function App() {
-  const [size, setSize] = useState(false);
+  const [size, setSize] = useState(true);
 
   return (
     <main className="">
@@ -12,7 +12,7 @@ function App() {
       {/* ==================== Code Editor Section ==================== */}
       <div className={`w-full absolute bottom-0 ${size ? `h-[38rem]` : `h-full`}`}>
         <div className={`flex justify-center h-full`}>
-          <div className={`${size ? `w-[75rem]` : `w-full`}`}>
+          <div className={`${size ? `w-[75rem]` : `w-full`} flex flex-col`}>
             {/* ==================== Code Editor Size Btn ==================== */}
             <div className={`w-full flex justify-end`}>
               <button
@@ -27,24 +27,24 @@ function App() {
               </button>
             </div>
             {/* ==================== Code Editor Box ==================== */}
-            <section className={`bg-red-100 border-2 w-full h-full grid grid-cols-2`}>
+            <section className={`bg-red-100 border-2 w-full flex-grow grid grid-cols-2`}>
               {/* ==================== Code Editor ==================== */}
               <div className={`border-2 border-black`}>
-                <header className={`px-2.5 py-1 border-2 border-black grid grid-cols-1`}>
+                <header className={`px-2.5 py-1 border-2 border-black flex flex-col`}>
                   <button type="button" className={`text-left`}>
                     x
                   </button>
                 </header>
-                <div></div>
+                <div className="flex-grow"></div>
               </div>
               {/* ==================== Code Editor Console ==================== */}
               <div className={`border-2 border-black`}>
-                <header className={`px-2.5 py-1 border-2 border-black grid grid-cols-1`}>
+                <header className={`px-2.5 py-1 border-2 border-black flex flex-col`}>
                   <button type="button" className={`text-left`}>
                     x
                   </button>
                 </header>
-                <div></div>
+                <div className="flex-grow"></div>
               </div>
             </section>
           </div>
