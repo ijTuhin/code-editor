@@ -20,46 +20,39 @@ function App() {
         <div className={`flex justify-center h-full`}>
           <div className={`${size ? `w-[75rem]` : `w-full`} flex flex-col`}>
             {/* ==================== Code Editor Size Btn ==================== */}
-            <div className="grid grid-cols-2">
-              <div className={`w-full bg-stone-300`}></div>
-              <div className={`w-full flex justify-end bg-stone-300`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSize(!size);
-                    console.log(size);
-                  }}
-                  className={`py-1.5 px-2 text-gray-500`}
-                >
-                  {size ? <TbMaximize /> : <LuMinimize />}
-                </button>
-              </div>
+            <div className={`w-full flex justify-end bg-stone-300`}>
+              <button
+                type="button"
+                onClick={() => {
+                  setSize(!size);
+                  console.log(size);
+                }}
+                className={`py-1.5 px-2 text-gray-500`}
+              >
+                {size ? <TbMaximize /> : <LuMinimize />}
+              </button>
             </div>
-            {/* ==================== Code Editor Box ==================== */}
+            {/* ==================== Code Editor Btns ==================== */}
+            <section className={`bg-stone-500 shadow-3xl w-full grid grid-cols-2 divide-x-2 border-b`}>
+              <header className={`px-2.5 py-1`}>
+                <button type="button" className={`text-left`}>
+                  x
+                </button>
+              </header>
+              <header className={`px-2.5 py-1`}>
+                <button type="button" className={`py-1.5 px-2 text-black`}>
+                  {<BsCaretRightFill />}
+                </button>
+              </header>
+            </section>
             <section
               className={`bg-stone-500 shadow-3xl w-full flex-grow grid grid-cols-2 divide-x-2`}
             >
               {/* ==================== Code Editor ==================== */}
-              <div className={`divide-y-2`}>
-                <header className={`px-2.5 py-1`}>
-                  <button type="button" className={`text-left`}>
-                    x
-                  </button>
-                </header>
-                <div className="flex-grow"></div>
-              </div>
+
+              <div className="flex-grow"></div>
               {/* ==================== Code Editor Console ==================== */}
-              <div className={`divide-y-2`}>
-                <header className={`px-2.5 py-1`}>
-                  {/* <button type="button" className={`text-left`}>
-                    x
-                  </button> */}
-                  <button type="button" className={`py-1.5 px-2 text-black`}>
-                    {<BsCaretRightFill />}
-                  </button>
-                </header>
-                <div className="flex-grow"></div>
-              </div>
+              <div className="flex-grow"></div>
             </section>
           </div>
         </div>
