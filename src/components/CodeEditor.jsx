@@ -1,9 +1,8 @@
 import { Editor } from "@monaco-editor/react";
 import { useRef, useState } from "react";
 
-function CodeEditor({lang}) {
+function CodeEditor({lang, value, setValue}) {
   const codeEditorRef = useRef();
-  const [value, setValue] = useState("// some comment");
   function onMountEditor(codeEditor) {
     codeEditorRef.current = codeEditor;
     codeEditor.focus()
@@ -13,7 +12,7 @@ function CodeEditor({lang}) {
       <Editor
         height="77.42vh"
         language={lang}
-        defaultValue="// some comment"
+        // defaultValue="// some comment"
         onMount={onMountEditor}
         value={value}
         onChange={(value) => setValue(value)}

@@ -10,11 +10,14 @@ import { FaFolderOpen } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import CodeEditor from "./components/CodeEditor";
 import SelectLanguage from "./components/SelectLanguage";
+import { CodeSnippet } from "./constantValues"
 import { useState } from "react";
 function App() {
   const [lang, setLang] = useState('javascript')
+  const [value, setValue] = useState(CodeSnippet['javascript']);
   function onSelect (lang) {
     setLang(lang)
+    setValue(CodeSnippet[lang])
   }
   return (
     <main className={`bg-stone-950 text-gray-400`}>
@@ -60,7 +63,7 @@ function App() {
           {/* =================== Code Editor Box ===================== */}
           <div className="flex h-full divide-x-2 divide-gray-500">
             {/* =================== Code ===================== */}
-            <CodeEditor lang={lang}/>
+            <CodeEditor lang={lang} value={value} setValue={setValue}/>
             {/* =================== Output ===================== */}
             <div className="w-1/2 bg-stone-400/5"></div>
           </div>
