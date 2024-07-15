@@ -9,8 +9,13 @@ import { MdOutlineContentCopy } from "react-icons/md";
 import { FaFolderOpen } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import CodeEditor from "./components/CodeEditor";
+import SelectLanguage from "./components/SelectLanguage";
+import { useState } from "react";
 function App() {
-
+  const [lang, setLang] = useState('javascript')
+  function onSelect (lang) {
+    setLang(lang)
+  }
   return (
     <main className={`bg-stone-950 text-gray-400`}>
       <header className={`bg-emerald-950 p-3`}>hjhslafd</header>
@@ -19,9 +24,7 @@ function App() {
           <div className="w-full grid grid-cols-2 gap-x-1">
             <div className="flex justify-between">
               {/* =================== Select Language Btn ===================== */}
-              <button className="bg-stone-400/10 py-2 px-3 rounded-tr-lg">
-                JavaScript
-              </button>
+              <SelectLanguage onSelect={onSelect} lang={lang}/>
               {/* =================== File Options Btn ===================== */}
               <div className="divide-x divide-stone-600 flex items-end">
                 <button className="bg-stone-400/10 py-1 text-sm px-3 rounded-tl-lg flex items-center justify-between gap-x-1">
@@ -57,7 +60,7 @@ function App() {
           {/* =================== Code Editor Box ===================== */}
           <div className="flex h-full divide-x-2 divide-gray-500">
             {/* =================== Code ===================== */}
-            <CodeEditor/>
+            <CodeEditor lang={lang}/>
             {/* =================== Output ===================== */}
             <div className="w-1/2 bg-stone-400/5"></div>
           </div>
