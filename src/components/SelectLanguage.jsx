@@ -1,16 +1,20 @@
 import { Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
 import { FaCode } from "react-icons/fa6";
-import { Languages } from "../constantValues";
+import { Languages } from "../assets/constantValues";
 export default function SelectLanguage({ lang, onSelect }) {
   const languages = Object.entries(Languages);
   return (
     <Menu isLazy>
       <MenuButton w={150}>
-        <p className={`bg-stone-400/10 px-3 rounded-tr-lg flex items-center divide-x-2 divide-stone-600 gap-1`}>
+        <p
+          className={`bg-stone-400/10 px-3 rounded-tr-lg flex items-center divide-x-2 divide-stone-600 gap-1`}
+        >
           <span className={`text-stone-500 pr-1.5 py-[0.39rem]`}>
             <FaCode />
           </span>
-          <span className={`pl-3 py-[0.39rem] flex-grow text-center`}>{lang}</span>
+          <span className={`pl-3 py-[0.39rem] flex-grow text-center`}>
+            {lang}
+          </span>
         </p>
       </MenuButton>
       <MenuList bg="#1c1917" roundedTopEnd="lg" gap="2">

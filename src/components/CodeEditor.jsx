@@ -12,7 +12,7 @@ function CodeEditor({lang, value, setValue}) {
       <Editor
         height="77.42vh"
         language={lang}
-        // defaultValue="// some comment"
+        theme="vs-dark"
         onMount={onMountEditor}
         value={value}
         onChange={(value) => setValue(value)}
