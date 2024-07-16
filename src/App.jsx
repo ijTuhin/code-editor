@@ -18,7 +18,7 @@ import { Spinner } from "@chakra-ui/react";
 function App() {
   const [lang, setLang] = useState("javascript");
   const [value, setValue] = useState(CodeSnippet["javascript"]);
-  const [output, setOutput] = useState(null);
+  const [output, setOutput] = useState('Click "Run" to see output');
   const [loading, setLoading] = useState(false);
   function onSelect(lang) {
     setLang(lang);
@@ -87,19 +87,12 @@ function App() {
             {/* =================== Code ===================== */}
             <CodeEditor lang={lang} value={value} setValue={setValue} />
             {/* =================== Output ===================== */}
-            {/* <RunOutput language={lang} value={value} output={output} /> */}
             {loading ? (
               <div className={`w-1/2 flex justify-center h-full items-center`}>
-                <Spinner
-                  // thickness="4px"
-                  speed="0.9s"
-                  // emptyColor="gray.200"
-                  color="blue.500"
-                  size="lg"
-                />
+                <Spinner speed="0.9s" color="blue.500" size="lg" />
               </div>
             ) : (
-              <>{output}</>
+              <RunOutput language={lang} value={value} output={output} />
             )}
           </div>
         </section>
