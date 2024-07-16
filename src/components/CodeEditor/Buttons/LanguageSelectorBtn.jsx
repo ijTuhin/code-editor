@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
 import { FaCode } from "react-icons/fa6";
-import { Languages } from "../assets/constantValues";
-export default function SelectLanguage({ lang, onSelect }) {
+import { Languages } from "../../../assets/constantValues";
+export default function LanguageSelectorBtn({ lang, onSelect }) {
   const languages = Object.entries(Languages);
   return (
     <Menu isLazy>
