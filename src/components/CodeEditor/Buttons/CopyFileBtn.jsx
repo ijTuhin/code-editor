@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { IoCheckmarkDone } from "react-icons/io5";
 import { MdOutlineContentCopy } from "react-icons/md";
 
 export default function CopyFileBtn({ textToCopy }) {
@@ -19,10 +20,12 @@ export default function CopyFileBtn({ textToCopy }) {
       ) : (
         <button
           disabled
-          className={`bg-stone-400/10 py-1 text-sm px-3 rounded-tr-lg flex items-center justify-between gap-x-1 cursor-text`}
+          className={`bg-stone-400/10 py-1 text-sm px-3 rounded-tr-lg flex items-center justify-between gap-x-1 cursor-text ${
+            isCopied && "text-stone-500/80"
+          }`}
         >
           <span>{isCopied ? "Copied" : "Copy"}</span>
-          <MdOutlineContentCopy />
+          <IoCheckmarkDone />
         </button>
       )}
     </CopyToClipboard>

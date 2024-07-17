@@ -27,7 +27,7 @@ function CodeEditor() {
               <LanguageSelectorBtn onSelect={onSelect} lang={lang} />
               <div className="divide-x divide-stone-600 flex items-end">
                 <OpenFileBtn />
-                <SaveFileBtn />
+                <SaveFileBtn lang={lang} fileToSave={value}/>
                 <CopyFileBtn textToCopy={value} />
               </div>
             </div>

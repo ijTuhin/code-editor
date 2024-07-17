@@ -14,5 +14,13 @@ const CodeSnippet = {
   // csharp: `\nString greet = "Hello World!"; \n\nConsole.WriteLine(greet);\n`,
   php: `\n<?php\n$txt = "Hello World!"; \n\necho $txt;\n`,
 }
+const FileExtension = {
+  javascript: `js`,
+  // typescript: `ts`,
+  python: `py`,
+  // java: `java`,
+  // csharp: `cs`,
+  php: `php`,
+}
 
-export {Languages, CodeSnippet}
+export {Languages, CodeSnippet, FileExtension}
