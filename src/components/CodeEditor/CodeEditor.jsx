@@ -26,8 +26,8 @@ function CodeEditor() {
             <div className="flex justify-between">
               <LanguageSelectorBtn onSelect={onSelect} lang={lang} />
               <div className="divide-x divide-stone-600 flex items-end">
-                <OpenFileBtn />
-                <SaveFileBtn lang={lang} fileToSave={value}/>
+                <OpenFileBtn lang={lang} setValue={setValue} />
+                <SaveFileBtn lang={lang} fileToSave={value} />
                 <CopyFileBtn textToCopy={value} />
               </div>
             </div>
@@ -42,7 +42,7 @@ function CodeEditor() {
                 code={value}
                 language={lang}
               />
-              <EditorSizeBtn/>
+              <EditorSizeBtn />
             </div>
             {/* =================== Output Box ===================== */}
             <div className={`h-full bg-stone-400/5`}>
