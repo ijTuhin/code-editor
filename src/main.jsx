@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import PlaygroundPage from "./pages/PlaygroundPage.jsx";
-import ProjectPage from "./pages/ProjectPage.jsx";
+import WriteCodePage from "./pages/WriteCodePage.jsx";
+import DevPage from "./pages/DevPage.jsx";
 // Extend theme of Chakra
 // import { extendTheme } from '@chakra-ui/react'
 // const colors = {
@@ -26,13 +26,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/playground",
-    element: <PlaygroundPage/>,
+    path: "/write-code",
+    element: <WriteCodePage/>,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/project",
-    element: <ProjectPage/>,
+    path: "/development",
+    element: <DevPage/>,
     errorElement: <ErrorPage />,
   },
 ]);

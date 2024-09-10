@@ -31,7 +31,7 @@ function CodeEditor() {
                 <CopyFileBtn textToCopy={value} />
               </div>
             </div>
-            <EditorBox lang={lang} value={value} setValue={setValue} />
+            <EditorBox lang={lang} value={value} setValue={setValue} height={"77.85vh"} />
           </div>
           <div className={`flex flex-col w-1/2 h-full pt-2`}>
             <div className="flex justify-end items-end pl-2">

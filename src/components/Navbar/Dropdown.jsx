@@ -14,12 +14,12 @@ import { Link } from "react-router-dom";
 export default function Dropdown() {
   return (
     <Menu>
-      <MenuButton colorScheme="pink">Profile</MenuButton>
+      <MenuButton colorScheme="pink">Playground</MenuButton>
       <MenuList>
-        <Link to="/playground">
+        <Link to="/write-code">
           <MenuItem>
             <Flex w="100%" alignItems="center" columnGap="2">
-              <Text fontSize="sm">Playground</Text>
+              <Text fontSize="sm">Write Code</Text>
               <Spacer />
               <span>
                 <MdOutlineKeyboardArrowRight />
@@ -28,25 +28,29 @@ export default function Dropdown() {
           </MenuItem>
         </Link>
         <MenuDivider />
-        <MenuItem>
-          <Flex w="100%" alignItems="center" gap="2">
-            <Text fontSize="sm">Project</Text>
-            <Spacer />
-            <span>
-              <MdOutlineKeyboardArrowRight />
-            </span>
-          </Flex>
-        </MenuItem>
+        <Link to="/development">
+          <MenuItem>
+            <Flex w="100%" alignItems="center" columnGap="2">
+              <Text fontSize="sm">Development</Text>
+              <Spacer />
+              <span>
+                <MdOutlineKeyboardArrowRight />
+              </span>
+            </Flex>
+          </MenuItem>
+        </Link>
         <MenuDivider />
-        <MenuItem>
-          <Flex w="100%" alignItems="center" gap="2">
-            <Text fontSize="sm">Problem Solving</Text>
-            <Spacer />
-            <span>
-              <MdOutlineKeyboardArrowRight />
-            </span>
-          </Flex>
-        </MenuItem>
+        <Link to="/problem-solving">
+          <MenuItem>
+            <Flex w="100%" alignItems="center" columnGap="2">
+              <Text fontSize="sm">Problem Solving</Text>
+              <Spacer />
+              <span>
+                <MdOutlineKeyboardArrowRight />
+              </span>
+            </Flex>
+          </MenuItem>
+        </Link>
       </MenuList>
     </Menu>
   );

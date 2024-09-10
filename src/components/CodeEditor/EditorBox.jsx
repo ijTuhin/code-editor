@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Editor } from "@monaco-editor/react";
 
-export default function EditorBox({lang, value, setValue}) {
+export default function EditorBox({lang, value, setValue, height}) {
     const codeEditorRef = useRef();
     function onMountEditor(codeEditor) {
       codeEditorRef.current = codeEditor;
@@ -10,7 +10,7 @@ export default function EditorBox({lang, value, setValue}) {
     return (
       <div className="bg-stone-400/10">
         <Editor
-          height="77.85vh"
+          height={height}
           language={lang}
           theme="vs-dark"
           onMount={onMountEditor}
