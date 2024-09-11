@@ -8,7 +8,7 @@ export default function Nabvar() {
   return (
     <>
       <header
-        className={`bg-emerald-950 p-3 flex justify-between items-center`}
+        className={`bg-[#784947] p-3 flex justify-between items-center`}
       >
         <h1>Code Editor</h1>
         <div className={`text-sm flex items-center gap-x-3`}>

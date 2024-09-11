@@ -1,7 +1,12 @@
 import { Editor } from "@monaco-editor/react";
 import { useEffect, useRef, useState } from "react";
 import { GrCode } from "react-icons/gr";
+import { TbMaximize } from "react-icons/tb";
+import styles from "./LivePreview.module.css";
+import { CgMinimize } from "react-icons/cg";
+
 export default function DevCodeEditor() {
+  const [viewExpanded, setviewExpanded] = useState(false);
   const [SourceCode, setSourceCode] = useState("");
   const [code, setCode] = useState({
     html: `<div class="item">
@@ -13,6 +18,8 @@ document.write("Hey there. What's up?")
 }`,
     css: `body{
   margin: 20px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
 }
 h1{
   color: darkred;
@@ -20,6 +27,16 @@ h1{
 button{
   border-radius: 8px;
   padding: 8px 10px;
+}
+button :hover{
+  background-color: darkslategray;
+}
+.item{
+  border: 2px solid gray;
+  background-color: black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 20px 50px;
 }`,
   });
   const codeEditorRef = useRef();
@@ -42,20 +59,24 @@ button{
   }, [code]);
   return (
     <main
-      className={`relative w-full h-[calc(100vh-3rem)] flex flex-col justify-center items-center px-3.5 pt-5 pb-1.5 gap-y-2`}
+      className={`relative w-full h-[calc(100vh-3rem)] overflow-hidden px-3.5 pt-5 pb-1.5 ${
+        viewExpanded ? "" : "flex flex-col justify-center items-center"
+      }`}
     >
       <div className={`w-full grid grid-cols-3 gap-x-2`}>
         <div>
-          <p
-            className={`py-1 flex justify-start items-center gap-x-2 text-sm text-gray-500`}
-          >
-            <span className="text-base">
-              <GrCode />
-            </span>
-            <span>HTML</span>
-          </p>
+          <div className="flex justify-start">
+            <p
+              className={`py-1.5 px-3 border border-b-0 border-l-0 bg-stone-900 border-gray-600 rounded-tr-lg flex items-center gap-x-2 text-sm text-gray-500`}
+            >
+              <span className="text-base">
+                <GrCode />
+              </span>
+              <span>HTML</span>
+            </p>
+          </div>
           <Editor
-            height="60.85vh"
+            height="50vh"
             language={"html"}
             theme="vs-dark"
             onMount={onMountEditor}
@@ -64,16 +85,18 @@ button{
           />
         </div>
         <div>
-          <p
-            className={`py-1 flex justify-start items-center gap-x-2 text-sm text-gray-500`}
-          >
-            <span className="text-base">
-              <GrCode />
-            </span>
-            <span>Javascript</span>
-          </p>
+          <div className="flex justify-start">
+            <p
+              className={`py-1.5 px-3 border border-b-0 border-l-0 bg-stone-900 border-gray-600 rounded-tr-lg flex items-center gap-x-2 text-sm text-gray-500`}
+            >
+              <span className="text-base">
+                <GrCode />
+              </span>
+              <span>Javascript</span>
+            </p>
+          </div>
           <Editor
-            height="60.85vh"
+            height="50vh"
             language={"javascript"}
             theme="vs-dark"
             onMount={onMountEditor}
@@ -82,16 +105,18 @@ button{
           />
         </div>
         <div>
-          <p
-            className={`py-1 flex justify-start items-center gap-x-2 text-sm text-gray-500`}
-          >
-            <span className="text-base">
-              <GrCode />
-            </span>
-            <span>CSS</span>
-          </p>
+          <div className="flex justify-start">
+            <p
+              className={`py-1.5 px-3 border border-b-0 border-l-0 bg-stone-900 border-gray-600 rounded-tr-lg flex items-center gap-x-2 text-sm text-gray-500`}
+            >
+              <span className="text-base">
+                <GrCode />
+              </span>
+              <span>CSS</span>
+            </p>
+          </div>
           <Editor
-            height="60.85vh"
+            height="50vh"
             language={"css"}
             theme="vs-dark"
             onMount={onMountEditor}
@@ -100,9 +125,18 @@ button{
           />
         </div>
       </div>
-      <div className={` bg-stone-800 w-full min-h-max flex-grow`}>
+      <div
+        className={` bg-stone-800 mt-2 w-full flex-grow ${styles.maxView} ${
+          viewExpanded ? "absolute top-0 left-0 z-10 h-full" : ""
+        } transition-height duration-700`}
+      >
+        <div className="bg-stone-800 w-full flex justify-end p-2">
+          <button onClick={() => setviewExpanded(!viewExpanded)}>
+            {viewExpanded ? <CgMinimize /> : <TbMaximize />}
+          </button>
+        </div>
         {!code.html ? (
-          <div className="h-full w-full flex justify-center items-center">
+          <div className="w-full flex justify-center items-center">
             <p className="text-3xl font-bold text-stone-950/45">Live Preview</p>
           </div>
         ) : (
