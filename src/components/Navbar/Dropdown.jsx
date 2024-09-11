@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default function Dropdown() {
   return (
     <Menu>
-      <MenuButton colorScheme="pink">Playground</MenuButton>
+      <MenuButton paddingY='7px' colorScheme="pink">Playground</MenuButton>
       <MenuList color="#3f3f46" bg="#a8a29e" borderColor="#a8a29e" borderRadius="0" borderBottomLeftRadius="10px">
         <MenuItem
           _hover={{

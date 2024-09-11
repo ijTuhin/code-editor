@@ -1,9 +1,11 @@
-import { useDisclosure } from "@chakra-ui/react";
+import { Button, useDisclosure } from "@chakra-ui/react";
 import Dropdown from "./Dropdown";
 import { PiSignOutBold } from "react-icons/pi";
 import ProfileDrawer from "../Profile/ProfileDrawer";
 import ProfileBtn from "../Profile/ProfileBtn";
 import { useState } from "react";
+import SignupModal from "../Authentication/SignupModal";
+import SignupBtn from "../Authentication/SignupBtn";
 export default function Nabvar() {
   const [user, SetUser] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,14 +22,16 @@ export default function Nabvar() {
                 <PiSignOutBold />
               </button>
             ) : (
-              <button className={`border px-3 py-1.5 rounded border-gray-400 hover:bg-[#724645]`}>
-                Sign Up
-              </button>
+              <SignupBtn onOpen={onOpen} />
             )}
           </div>
         </div>
       </header>
-      <ProfileDrawer onClose={onClose} isOpen={isOpen} />
+      {user ? (
+        <ProfileDrawer onClose={onClose} isOpen={isOpen} />
+      ) : (
+        <SignupModal onClose={onClose} isOpen={isOpen} />
+      )}
     </>
   );
 }
