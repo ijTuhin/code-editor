@@ -15,42 +15,57 @@ export default function Dropdown() {
   return (
     <Menu>
       <MenuButton colorScheme="pink">Playground</MenuButton>
-      <MenuList>
-        <Link to="/write-code">
-          <MenuItem>
-            <Flex w="100%" alignItems="center" columnGap="2">
+      <MenuList color="#3f3f46" bg="#a8a29e" borderColor="#a8a29e" borderRadius="0" borderBottomLeftRadius="10px">
+        <MenuItem
+          _hover={{
+            background: "#737373",
+            color: "#a3a3a3"
+          }}
+          bg="#a8a29e"
+          paddingY="10px"
+        >
+          <Link className={`w-full`} to="/write-code">
+            <Flex w="100%" alignItems="center">
               <Text fontSize="sm">Write Code</Text>
               <Spacer />
-              <span>
-                <MdOutlineKeyboardArrowRight />
-              </span>
+              <MdOutlineKeyboardArrowRight />
             </Flex>
-          </MenuItem>
-        </Link>
-        <MenuDivider />
-        <Link to="/development">
-          <MenuItem>
-            <Flex w="100%" alignItems="center" columnGap="2">
+          </Link>
+        </MenuItem>
+
+        <MenuItem
+          _hover={{
+            background: "#737373",
+            color: "#a3a3a3"
+          }}
+          bg="#a8a29e"
+          paddingY="10px"
+        >
+          <Link className={`w-full`} to="/development">
+            <Flex w="100%" alignItems="center">
               <Text fontSize="sm">Development</Text>
               <Spacer />
-              <span>
-                <MdOutlineKeyboardArrowRight />
-              </span>
+              <MdOutlineKeyboardArrowRight />
             </Flex>
-          </MenuItem>
-        </Link>
-        <MenuDivider />
-        <Link to="/problem-solving">
-          <MenuItem>
-            <Flex w="100%" alignItems="center" columnGap="2">
+          </Link>
+        </MenuItem>
+
+        <MenuItem
+          _hover={{
+            background: "#737373",
+            color: "#a3a3a3"
+          }}
+          bg="#a8a29e"
+          paddingY="10px"
+        >
+          <Link className={`w-full`} to="/problem-solving">
+            <Flex w="100%" alignItems="center">
               <Text fontSize="sm">Problem Solving</Text>
               <Spacer />
-              <span>
-                <MdOutlineKeyboardArrowRight />
-              </span>
+              <MdOutlineKeyboardArrowRight />
             </Flex>
-          </MenuItem>
-        </Link>
+          </Link>
+        </MenuItem>
       </MenuList>
     </Menu>
   );

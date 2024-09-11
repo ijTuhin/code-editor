@@ -27,6 +27,7 @@ h1{
 button{
   border-radius: 8px;
   padding: 8px 10px;
+  cursor: pointer;
 }
 button :hover{
   background-color: darkslategray;
