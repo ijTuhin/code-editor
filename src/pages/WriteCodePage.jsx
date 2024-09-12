@@ -1,4 +1,3 @@
-import React from "react";
 import Nabvar from "../components/Navbar/Nabvar";
 import CodeEditor from "../components/CodeEditor/CodeEditor";
 

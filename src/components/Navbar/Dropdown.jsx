@@ -2,7 +2,6 @@ import {
   Flex,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
   Spacer,
