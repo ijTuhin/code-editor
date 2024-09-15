@@ -60,11 +60,11 @@ button :hover{
   }, [code]);
   return (
     <main
-      className={`relative w-full h-[calc(100vh-3rem)] overflow-hidden px-3.5 pt-5 pb-1.5 ${
+      className={`lg:md:relative w-full h-full lg:md:h-[calc(100vh-3rem)] lg:md:overflow-hidden lg:md:px-3.5 px-10 lg:md:pt-5 pt-[3rem] pb-1.5  ${
         viewExpanded ? "" : "flex flex-col justify-center items-center"
       }`}
     >
-      <div className={`w-full grid grid-cols-3 gap-x-2`}>
+      <div className={`w-full grid lg:md:grid-cols-3 grid-cols-1 gap-x-2`}>
         <div>
           <div className="flex justify-start">
             <p
@@ -126,10 +126,11 @@ button :hover{
           />
         </div>
       </div>
+      {/* ========== Live Preview ========== */}
       <div
-        className={` bg-stone-800 mt-2 w-full flex-grow ${styles.maxView} ${
-          viewExpanded ? "absolute top-0 left-0 z-10 h-full" : ""
-        } transition-height duration-700`}
+        className={` bg-stone-800 mt-2 w-full h-full flex-grow ${styles.maxView} ${
+          viewExpanded ? "lg:md:absolute lg:md:top-0 lg:md:left-0 lg:md:z-10 lg:md:h-full" : ""
+        } transition-height duration-700 lg:md:mb-0 mb-10`}
       >
         <div className="bg-stone-800 w-full flex justify-end p-2">
           <button onClick={() => setviewExpanded(!viewExpanded)}>

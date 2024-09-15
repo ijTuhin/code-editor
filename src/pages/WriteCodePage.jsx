@@ -3,7 +3,7 @@ import CodeEditor from "../components/CodeEditor/CodeEditor";
 
 export default function WriteCodePage() {
   return (
-    <main className={`bg-stone-950 text-gray-400 h-screen overflow-hidden`}>
+    <main className={`bg-stone-950 text-gray-400 lg:md:h-screen h-fit lg:md:overflow-hidden`}>
       <Nabvar />
       <CodeEditor />
     </main>

@@ -14,7 +14,7 @@ export default function SaveFileBtn({fileToSave, lang}) {
       onClick={toSaveFile}
       className="bg-stone-400/10 py-1 text-sm px-3 flex items-center justify-between gap-x-1"
     >
-      <span>Save</span>
+      <span className={`lg:md:flex hidden`}>Save</span>
       <LuSave />
     </button>
   );

@@ -14,7 +14,7 @@ export default function CopyFileBtn({ textToCopy }) {
         <button
           className={`bg-stone-400/10 py-1 text-sm px-3 rounded-tr-lg flex items-center justify-between gap-x-1 cursor-pointer`}
         >
-          <span>Copy</span>
+          <span className={`lg:md:flex hidden`}>Copy</span>
           <MdOutlineContentCopy />
         </button>
       ) : (
@@ -24,7 +24,9 @@ export default function CopyFileBtn({ textToCopy }) {
             isCopied && "text-stone-500/80"
           }`}
         >
-          <span>{isCopied ? "Copied" : "Copy"}</span>
+          <span className={`lg:md:flex hidden`}>
+            {isCopied ? "Copied" : "Copy"}
+          </span>
           <IoCheckmarkDone />
         </button>
       )}

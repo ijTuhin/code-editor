@@ -13,7 +13,7 @@ export default function OpenFileBtn({ setValue, lang }) {
     <label
       className={`bg-stone-400/10 py-1 text-sm px-3 rounded-tl-lg flex items-center justify-between gap-x-1 cursor-pointer`}
     >
-      <span>Open</span>
+      <span className={`lg:md:flex hidden`}>Open</span>
       <FaFolderOpen />
       <input
         type="file"

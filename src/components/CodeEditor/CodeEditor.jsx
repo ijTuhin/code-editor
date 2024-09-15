@@ -19,10 +19,10 @@ function CodeEditor() {
     setValue(CodeSnippet[lang]);
   }
   return (
-    <div className={`w-full flex justify-center mt-20`}>
-      <section className={`w-[75rem] h-[38.4rem] flex flex-col`}>
-        <div className="flex h-full gap-x-2">
-          <div className={`flex flex-col w-1/2 h-full`}>
+    <div className={`w-full flex justify-center lg:md:mt-20 mt-5 lg:md:mb-0 bg-stone-950 lg:md:px-0 px-10`}>
+      <section className={`lg:md:w-[75rem] w-full lg:md:h-[38.4rem] h-full flex flex-col`}>
+        <div className="flex lg:md:flex-row flex-col items-center h-full lg:md:gap-x-2 gap-y-3 lg:md:mx-0">
+          <div className={`flex flex-col lg:md:w-1/2 w-full h-full`}>
             <div className="flex justify-between">
               <LanguageSelectorBtn onSelect={onSelect} lang={lang} />
               <div className="divide-x divide-stone-600 flex items-end">
@@ -33,7 +33,7 @@ function CodeEditor() {
             </div>
             <EditorBox lang={lang} value={value} setValue={setValue} height={"77.85vh"} />
           </div>
-          <div className={`flex flex-col w-1/2 h-full pt-2`}>
+          <div className={`bg-stone-950 flex flex-col lg:md:w-1/2 w-full h-full pt-2`}>
             <div className="flex justify-end items-end pl-2">
               <EditorSettingsBtn />
               <CodeRunBtn
@@ -45,7 +45,7 @@ function CodeEditor() {
               <EditorSizeBtn />
             </div>
             {/* =================== Output Box ===================== */}
-            <div className={`h-full bg-stone-400/5`}>
+            <div className={`lg:md:h-full h-[77.85vh] lg:md:bg-stone-400/5 bg-stone-800`}>
               {loading ? (
                 <div
                   className={`flex justify-center h-full items-center bg-stone-400/5`}
