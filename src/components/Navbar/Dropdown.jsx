@@ -7,18 +7,35 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
+import { IoMdArrowDropdown, IoMdMenu } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export default function Dropdown() {
   return (
     <Menu>
-      <MenuButton paddingY='7px' colorScheme="pink">Playground</MenuButton>
-      <MenuList color="#3f3f46" bg="#a8a29e" borderColor="#a8a29e" borderRadius="0" borderBottomLeftRadius="10px">
+      <MenuButton paddingY="3px" colorScheme="pink">
+        <p className="lg:md:flex justify-center items-center hidden">
+          Playground
+          <span className="text-lg">
+            <IoMdArrowDropdown />
+          </span>
+        </p>
+        <span className="flex lg:md:hidden text-2xl">
+          <IoMdMenu />
+        </span>
+      </MenuButton>
+      <MenuList
+        color="#3f3f46"
+        bg="#a8a29e"
+        borderColor="#a8a29e"
+        borderRadius="0"
+        borderBottomLeftRadius="10px"
+      >
         <MenuItem
           _hover={{
             background: "#737373",
-            color: "#a3a3a3"
+            color: "#a3a3a3",
           }}
           bg="#a8a29e"
           paddingY="10px"
@@ -35,7 +52,7 @@ export default function Dropdown() {
         <MenuItem
           _hover={{
             background: "#737373",
-            color: "#a3a3a3"
+            color: "#a3a3a3",
           }}
           bg="#a8a29e"
           paddingY="10px"
@@ -52,7 +69,7 @@ export default function Dropdown() {
         <MenuItem
           _hover={{
             background: "#737373",
-            color: "#a3a3a3"
+            color: "#a3a3a3",
           }}
           bg="#a8a29e"
           paddingY="10px"
