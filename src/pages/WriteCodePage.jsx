@@ -1,5 +1,5 @@
 import Nabvar from "../components/Navbar/Nabvar";
-import CodeEditor from "../components/CodeEditor/CodeEditor";
+import CodeEditor from "../components/CodeEditorComp/CodeEditor";
 
 export default function WriteCodePage() {
   return (
