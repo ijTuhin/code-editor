@@ -46,7 +46,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/editor",
-    element: <EditorPage />,
+    element: <WriteCodePage />,
+    // element: <EditorPage />,
     // element: <CreateSectionUI />,
     // element: <DevMainUI />,
     errorElement: <ErrorPage />,

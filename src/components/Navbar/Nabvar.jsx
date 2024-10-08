@@ -6,7 +6,7 @@ import { useState } from "react";
 import SignupModal from "../Authentication/SignupModal";
 import { TbBrandVscode } from "react-icons/tb";
 export default function Nabvar() {
-  const [user, SetUser] = useState(null);
+  const [user, SetUser] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

@@ -6,24 +6,17 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/react";
+import ProfileDrawerView from "./DrawerView/ProfileDrawerView";
 
 export default function ProfileDrawer({ onClose, isOpen }) {
   return (
-    <Drawer onClose={onClose} isOpen={isOpen} size="xl">
+    <Drawer onClose={onClose} isOpen={isOpen} size="xl" >
       <DrawerOverlay />
-      <DrawerContent>
-        <DrawerCloseButton />
-        <DrawerHeader>{`drawer contents`}</DrawerHeader>
+      <DrawerContent bg="#1c1917" boxShadow="2xl" color="#737373">
+        {/* <DrawerCloseButton /> */}
+        {/* <DrawerHeader>{`drawer contents`}</DrawerHeader> */}
         <DrawerBody>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Consequat nisl vel pretium lectus quam id. Semper quis lectus nulla
-            at volutpat diam ut venenatis. Dolor morbi non arcu risus quis
-            varius quam quisque. Massa ultricies mi quis hendrerit dolor magna
-            eget est lorem. Erat imperdiet sed euismod nisi porta. Lectus
-            vestibulum mattis ullamcorper velit.
-          </p>
+          <ProfileDrawerView/>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
