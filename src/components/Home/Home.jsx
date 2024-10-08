@@ -1,9 +1,8 @@
-import { SiCodeblocks, SiCodefactor, SiSemanticweb } from "react-icons/si";
+import { SiSemanticweb } from "react-icons/si";
 import TopMainNavBar from "../Navbar/TopMainNavBar";
-import { GrCodeSandbox } from "react-icons/gr";
-import { FaCode, FaFileCode } from "react-icons/fa6";
 import { PiCodeThin } from "react-icons/pi";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -13,22 +12,22 @@ export default function Home() {
         className={`w-full flex flex-col justify-center items-center pt-32 gap-y-10`}
       >
         <section className={`w-1/3 grid grid-cols-2 gap-x-10`}>
-          <button
+          <Link to="/dev"
             className={`h-48 flex flex-col justify-center items-center gap-y-2 bg-stone-800/65 hover:bg-stone-800 hover:border-cyan-900`}
           >
             <span className={`text-5xl`}>
               <SiSemanticweb />
             </span>
             <span>Development</span>
-          </button>
-          <button
+          </Link>
+          <Link to="/code"
             className={`h-48 flex flex-col justify-center items-center gap-y-1 bg-stone-800/65 hover:bg-stone-800 hover:border-cyan-900`}
           >
             <span className={`text-5xl`}>
               <PiCodeThin />
             </span>
             <span>Write Code</span>
-          </button>
+          </Link>
         </section>
         <section className={`w-1/3 border-t border-stone-900 py-5 space-y-3.5`}>
           <p className={`text-stone-600/75 text-sm`}>

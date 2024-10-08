@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SiCodeceptjs, SiCodefresh } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
+import { NavLink } from "react-router-dom";
 
 export default function TopMainNavBar() {
   const [user, SetUser] = useState(1);
@@ -13,9 +14,30 @@ export default function TopMainNavBar() {
         Code Ground
       </h1>
       <div className={`space-x-5`}>
-        <button>Home</button>
-        <button>About</button>
-        <button>Editor</button>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline underline-offset-4 text-gray-300" : ""
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline underline-offset-4 text-gray-300" : ""
+          }
+          to="/about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline underline-offset-4 text-gray-300" : ""
+          }
+          to="/ide"
+        >
+          Editor
+        </NavLink>
       </div>
       {user ? (
         <div className={`space-x-3.5`}>
