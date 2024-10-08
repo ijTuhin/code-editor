@@ -8,7 +8,10 @@ import HomePage from "./pages/HomePage.jsx";
 import WriteCodePage from "./pages/WriteCodePage.jsx";
 import DevPage from "./pages/DevPage.jsx";
 import ProblemSolvingPage from "./pages/ProblemSolvingPage.jsx";
-import UserCodeEditorSpacePage from "./pages/UserCodeEditorSpacePage.jsx";
+import Home from "./components/Home/Home.jsx";
+import DevMainUI from "./components/IDE/Dev/DevMainUI.jsx";
+import EditorPage from "./pages/EditorPage.jsx";
+import CreateSectionUI from "./components/IDE/Create/CreateSectionUI.jsx";
 // Extend theme of Chakra
 // import { extendTheme } from '@chakra-ui/react'
 // const colors = {
@@ -23,9 +26,30 @@ import UserCodeEditorSpacePage from "./pages/UserCodeEditorSpacePage.jsx";
 
 const router = createBrowserRouter([
   {
-    // path: "/",
-    // element: <DevPage />,
-    // errorElement: <ErrorPage />,
+    path: "/",
+    element: <HomePage />,
+    // element: <Home />,
+    // element: <DevMainUI />,
+    errorElement: <ErrorPage />,
+    children:[
+      {
+        index: true,
+        element: <Home />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "development",
+        element: <DevMainUI />,
+        errorElement: <ErrorPage />,
+      },
+    ]
+  },
+  {
+    path: "/editor",
+    element: <EditorPage />,
+    // element: <CreateSectionUI />,
+    // element: <DevMainUI />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/write-code",
@@ -40,11 +64,6 @@ const router = createBrowserRouter([
   {
     path: "/problem-solving",
     element: <ProblemSolvingPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/",
-    element: <UserCodeEditorSpacePage />,
     errorElement: <ErrorPage />,
   },
 ]);
