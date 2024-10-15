@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md';
 
 export default function ChildFolder({child, depth}) {
     const [isExpanded, setIsExpanded] = useState(false);
-
     return (
       <>
-        <button onClick={() => setIsExpanded(prev => !prev)} className={`flex items-end gap-x-1`}>
+        <button onClick={() => setIsExpanded(prev => !prev)} className={`flex items-end gap-x-1 `}>
           {child?.children && (
             <div >
               {isExpanded ? <MdKeyboardArrowDown /> : <MdKeyboardArrowRight />}
             </div>
           )}
-          <span className="name" style={{ paddingLeft: child?.children ? "" : "0.05rem" }} >
+          <span className="name" style={{ paddingLeft: child?.children ? "" : "0.25rem" }} >
             {child?.name}
           </span>
         </button>
-        <div className={`border-l border-stone-600 m-1.5`}>
+        <div className={`border-l border-stone-600/50 m-1.5`}>
           {isExpanded && (
             <div style={{ paddingLeft: `5px` }}>
               {child?.children?.map((child) => (

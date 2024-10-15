@@ -1,9 +1,11 @@
 import { useState } from "react";
 import CreateFolder from "./CreateFolder";
 import ChildFolder from "./ChildFolder";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 export default function FolderTree() {
   const depth = 0;
+  const [isExpanded, setIsExpanded] = useState(false);
   const [tree, setTree] = useState({
     name: "New Folder",
     children: [
@@ -34,6 +36,7 @@ export default function FolderTree() {
         children: [
           {
             name: "components",
+            children: [{ name: "home" }],
           },
         ],
       },
@@ -44,14 +47,28 @@ export default function FolderTree() {
       className={`w-full py-2 px-1.5 relative border-b border-stone-700`}
     >
       {/* ========= Root Folder ========= */}
-      <div className={`flex justify-between items-end w-full `}>
-        <p className={``}>{tree.name}</p>
-        <CreateFolder />
-      </div>
-      <div className={`mt-1.5 ml-2`}>
-        {tree?.children?.map((val, idx) => (
-          <ChildFolder key={idx} child={val} depth={depth + 1} />
-        ))}
+      <section className={`flex justify-between items-end w-full `}>
+        <button
+          onClick={() => setIsExpanded((prev) => !prev)}
+          className={`flex items-end gap-x-1 `}
+        >
+          <div>
+            {isExpanded ? <MdKeyboardArrowDown /> : <MdKeyboardArrowRight />}
+          </div>
+          <span className="name">{tree.name}</span>
+        </button>
+        <CreateFolder setTree={setTree} />
+      </section>
+
+      {/* ============ Child Folder/Files ============ */}
+      <div className={`border-l border-stone-600/50 m-1.5`}>
+        {isExpanded && (
+          <div style={{ paddingLeft: `5px` }}>
+            {tree.children?.map((child) => (
+              <ChildFolder key={child.name} child={child} depth={depth + 1} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
