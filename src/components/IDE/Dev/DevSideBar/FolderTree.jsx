@@ -3,7 +3,7 @@ import CreateFolder from "./CreateFolder";
 import ChildFolder from "./ChildFolder";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
-export default function FolderTree() {
+export default function FolderTree({ opennedFile, setOpennedFile }) {
   const depth = 0;
   const [isExpanded, setIsExpanded] = useState(false);
   const [tree, setTree] = useState({
@@ -65,7 +65,12 @@ export default function FolderTree() {
         {isExpanded && (
           <div style={{ paddingLeft: `5px` }}>
             {tree.children?.map((child) => (
-              <ChildFolder key={child.name} child={child} depth={depth + 1} />
+              <ChildFolder
+                key={child.name}
+                child={child}
+                depth={depth + 1}
+                setOpennedFile={setOpennedFile}
+              />
             ))}
           </div>
         )}
