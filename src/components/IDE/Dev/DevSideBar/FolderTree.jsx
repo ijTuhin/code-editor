@@ -44,7 +44,7 @@ export default function FolderTree({ opennedFile, setOpennedFile }) {
   });
   return (
     <section
-      className={`w-full py-2 px-1.5 relative border-b border-stone-700`}
+      className={`w-full py-2 px-1.5 relative border-b border-stone-700/60`}
     >
       {/* ========= Root Folder ========= */}
       <section className={`flex justify-between items-end w-full `}>

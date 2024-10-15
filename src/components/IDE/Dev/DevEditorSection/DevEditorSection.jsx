@@ -12,7 +12,9 @@ export default function DevEditorSection({ opennedFile, setOpennedFile }) {
           <button
             onClick={() => setFileSelected(i)}
             key={idx}
-            className={`px-1.5 py-1.5 flex items-center relative text-xs gap-x-1 rounded-tl-lg bg-stone-700/40`}
+            className={`px-1.5 py-1.5 flex items-center relative text-xs gap-x-1 rounded-tl-lg ${
+              fileSelected === i ? "bg-stone-700/50" : "bg-stone-700/30"
+            }`}
           >
             <span>{i}</span>
             <span className={`relative top-[0.05rem]`}>
