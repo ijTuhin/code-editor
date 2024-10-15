@@ -42,6 +42,11 @@ const router = createBrowserRouter([
         element: <DevMainUI />,
         errorElement: <ErrorPage />,
       },
+      {
+        path: "code",
+        element: <WriteCodePage />,
+        errorElement: <ErrorPage />,
+      },
     ]
   },
   {
